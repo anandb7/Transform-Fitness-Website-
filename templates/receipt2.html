@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Membership Receipt{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://media.istockphoto.com/id/1213615970/photo/gym-background-fitness-weight-equipment-on-empty-dark-floor.jpg?b=1&s=612x612&w=0&k=20&c=6DpC-s8ug5e_42v3DIQC-5oXse4FQaYxK6T-4-cXaeg=');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+  <br>
+  <form class="headd">
+    <h1 class="round" style="color: white;font-size: 40px;">Payment Successful<br><br><br>Receipt<br></h1>
+  </form>
+  
+  <form style="display: flex; flex-direction: column; align-items: center;" class="receipt">
+    <h2>User: {{ username }}</h2>
+    <h3>Date of Payment: {{ date_of_payment }}</h3>
+
+    <h2>Selected Memberships:</h2>
+    <li>{{ selected_items|replace(',', ',<br>')|safe }}</li>
+    
+    <h2>Total Amount (Memberships):</h2>
+    <p>{{ total_amount_membership }}₹</p>
+  </form>
+  
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <a href="/dashboard"><br><br>
+      <input formaction="/shop-membership/checkout/razor" class="submit-button" type="submit" value="Return to Dashboard">
+    </a>
+  </div>
+</div>
+{% endblock %}

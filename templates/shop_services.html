@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop Services{% endblock %}
+
+{% block content %}
+<div style="background-image: url('static/images/shop-services.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;"><br>
+  <h1>Shop Services</h1>
+  <br><br>
+  <form action="/shop-services" method="POST" >
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      {% for service in services %}
+      <div style="width: 40%; margin: 10px; padding: 10px; background-color: #000000d6; color: #c4c4c4;" class="round">
+        <h2>{{ service.name }}</h2>
+        <p style="color: #fff;">Price: {{ service.price }}
+        <input type="checkbox" name="selected_services" value="{{ service.id }}"></p>
+        <span class="hover-text">{{ service.description }}</span>
+      </div><br><br>
+      {% endfor %}
+    </div>
+    <br>
+<div style="text-align: center"><br><br><br><br><br><br>
+    <input  formaction="/shop-services/checkout" class="submit-button" type="submit" value="Checkout" ><br><br></div>
+  </form>
+</div>
+
+<style>
+.hover-text {
+  display: none;
+}
+
+.round:hover .hover-text {
+  display: block;
+}
+</style>
+{% endblock %}

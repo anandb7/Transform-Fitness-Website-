@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Razorpay Payment</h1>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Razorpay Payment</title>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    </head>
+    <body>
+        <h1>Razorpay Payment</h1>
+        <form action="https://www.example.com/payment/success/" method="POST">
+            <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_hWbjKqDDxaZkw" // Enter the Key ID generated from the Dashboard
+            data-amount="50000" // Amount is in currency subunits. Default currency
+            data-currency="INR"
+            data-order_id="order_CgmcjRh9ti21P7"//This is a sample Order ID. Pass
+            data-buttontext="Pay with Razorpay"
+            data-name="Acme Corp"
+            data-description="Test transaction"
+            data-image="https://example.com/your_logo.jpg"
+            data-prefill.name="Gaurav Kumar"
+            data-prefill.email="gaurav.kumar@example.com"
+            data-prefill. contact="9999999999"
+            data-theme.color="#F37254"
+            ></script>
+            <input type="hidden" custom="Hidden Element" name="hidden">
+            </form>
+        <button id="rzp-button">Pay Now</button>
+    </body>
+    </html>
+    
+    <button id="rzp-button">Pay Now</button>
+</body>
+</html>

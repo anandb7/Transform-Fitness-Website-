@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block body_class %}login-page{% endblock %}
+{% block content %}
+<div style="background-image: url('static/images/log.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+<pre> </pre>
+    <h1 style="color:rgba(41, 40, 40, 0.914) ;margin-top: 70px;" class="heading">Login</h1>
+    <form method="POST" action="/login" style="display: flex; flex-direction: column; align-items: center;" class="round">
+        <input class="input-field" type="text" name="username" placeholder="Username" required><br><br>
+        <input class="input-field" type="password" name="password" placeholder="Password" required><br><br>
+        <input style="display: inline-block;
+        padding: 7px 0;
+        background-color: #f8bc1a;
+        border: 1px solid #f8bc1a; width: 200px;font-size: large;
+        color: #ffffff;" type="submit" value="Login">
+    </form>
+    
+    <p  style="color:aliceblue ;">Don't have an account? <a href="/register">Register</a></p>
+    <p  style="color:aliceblue ;">Or Login with Gmail <a href="/gmaillogin">Gmail</a></p>
+    <pre>
+  
+
+
+
+
+
+        
+    </pre>
+{% endblock %}

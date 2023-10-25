@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://www.thespruce.com/thmb/nEQJemYpGs7bPx6fJWGSwpjd14E=/2998x0/filters:no_upscale():max_bytes(150000):strip_icc()/assorted-gym-and-fitness-equipment-in-a-garage-1184898586-b2b7dba2df74471cb1164cc1c4526552.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+
+  <h1 style="color: white;"><i>Admin Receipts</i></h1>
+
+  <h2 style="color: white;">Receipt List</h2>
+  <ul>
+    {% for receipt in receipts %}
+    <form style="display: flex; flex-direction: column; align-items: center;" class="receipt"  >
+      
+      <li style="font-size: 20px;">Username: <strong>{{ receipt.username }}</strong></li><br>
+      <li style="font-size: 15px;">Total Amount: <strong>{{ receipt.total_amount }}</strong></li><br>
+      <li style="font-size: 15px;">Date of Payment: <strong>{{ receipt.date_of_payment }}</strong></li><br>
+      <li style="font-size: 15px;">Selected Items : <strong>{{ receipt.selected_items|replace(',', ',<br>')|safe }}</strong></li><br>
+      <li style="font-size: 20px;">Receipt Id: <strong>{{ receipt.id }}</strong></li><br>
+      <!-- Display other receipt information as needed -->
+    </form>
+    {% endfor %}
+  </ul>
+</form>
+  <br>
+  <a href="/logout">Logout</a>
+{% endblock %}

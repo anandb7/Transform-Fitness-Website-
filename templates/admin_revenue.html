@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Revenue{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://images.unsplash.com/photo-1535743686920-55e4145369b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80');background-repeat: no-repeat;
+background-size: contain; background-size: cover; display: flex; flex-direction: column; align-items: center;">
+  <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px;">
+    <div style="width: 50%;">
+        <h1 style="color:rgba(253, 253, 253, 0.914) ;margin-top: 20px;margin-bottom: 20px;" class="heading">Admin Revenue</h1><br>
+
+      <h2 style="text-align: left; color: white;">Total Revenue for Products:
+      {% if total_revenue_products %}
+      {{ total_revenue_products.total_amount }}</h2>
+      {% else %}
+      <p style="text-align: left;">No revenue generated for products</p>
+      {% endif %}
+      <br>
+      <h2 style="text-align: left; color: white;">Total Revenue for Services:
+      {% if total_revenue_services %}
+      {{ total_revenue_services.total_amount }}</h2>
+      {% else %}
+      <p style="text-align: left;">No revenue generated for services</p>
+      {% endif %}
+      <br>
+      <h2 style="text-align: left; color: white;">Total Revenue for Membership:
+      {% if total_revenue_membership %}
+      {{ total_revenue_membership.total_amount }}</h2>
+      {% else %}
+      <p style="text-align: left;">No revenue generated for membership</p>
+      {% endif %}
+      <br>
+      <h1 style="text-align: left; color: white;">Total Combined Revenue:
+      {{ total_revenue_combined }}</h1>
+    </div>
+    <div style="width: 50%;">
+      <div style="width: 100%; height: 400px;">
+        <canvas id="revenueChart"></canvas>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        var ctx = document.getElementById('revenueChart').getContext('2d');
+        var revenueChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Products', 'Services', 'Membership'],
+            datasets: [{
+              label: 'Revenue',
+              data: [
+                {% if total_revenue_products %}
+                {{ total_revenue_products.total_amount }},
+                {% else %}
+                0,
+                {% endif %}
+                {% if total_revenue_services %}
+                {{ total_revenue_services.total_amount }},
+                {% else %}
+                0,
+                {% endif %}
+                {% if total_revenue_membership %}
+                {{ total_revenue_membership.total_amount }}
+                {% else %}
+                0
+                {% endif %}
+              ],
+              backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(75, 192, 192, 0.5)'],
+              borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)'],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            },
+            layout: {
+              padding: {
+                left: 50,
+                right: 50,
+                top: 50,
+                bottom: 1
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </div><br><br><br><br><br><br>
+
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Razorpay Payment</h1>
+    <form action="https://www.example.com/payment/success" method="POST" class="round">
+    <script>
+        var options = {
+            "key": "rzp_test_hWbjKqDDxaZkwG",  // Replace with the Razorpay key ID
+            "amount": "{{ order.amount }}",  // Replace with the order amount in paise
+            "currency": "{{ order.currency }}",  // Replace with the currency
+            "name": "Your Store",
+            "description": "Order Payment",
+            "image": "your_logo_url.png",  // Replace with your store logo URL
+            "order_id": "{{ order.id }}",  // Replace with the order ID
+            "handler": function (response) {
+                // Handle the payment success callback
+                console.log(response);
+                // You can redirect or perform any other action here
+            },
+            "prefill": {
+                "name": "{{ user.name }}",  // Replace with the user's name
+                "email": "{{ user.email }}"  // Replace with the user's email
+            }
+        };
+
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function (response) {
+            // Handle the payment failure callback
+            console.log(response.error.code);
+            console.log(response.error.description);
+            console.log(response.error.source);
+            console.log(response.error.step);
+            console.log(response.error.reason);
+            console.log(response.error.metadata.order_id);
+            console.log(response.error.metadata.payment_id);
+        });
+
+        document.getElementById('rzp-button').onclick = function () {
+            rzp1.open();
+        };
+   
+    </script>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://www.thespruce.com/thmb/nEQJemYpGs7bPx6fJWGSwpjd14E=/2998x0/filters:no_upscale():max_bytes(150000):strip_icc()/assorted-gym-and-fitness-equipment-in-a-garage-1184898586-b2b7dba2df74471cb1164cc1c4526552.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+  <h1 style="color: white;"><i>Add Membership</i></h1>
+
+  <form method="POST" action="/admin/add-membership" style="display: flex; flex-direction: column; align-items: center;">
+    <h2 style="color: white;">Please enter the name of the Membership with the price</h2>
+    <label for="name" style="color: white;">Name of membership:</label>
+    <input class="input-field" type="text" id="name" name="name" required>
+    <br><br>
+    <label for="description" style="color: white;">Description:</label>
+    <textarea class="input-field" id="description" name="description" required></textarea>
+    <br><br>
+
+    <label for="price" style="color: white;">Price of membership:</label>
+    <input class="input-field" type="number" id="price" name="price" step="0.01" required>
+    <br>
+    <button type="submit" class="submit-button">Add</button>
+  </form>
+  <br>
+  <h2>Membership List</h2>
+  <ul>
+    {% for membership in memberships %}
+      <li>{{ membership.name }} - ${{ membership.price }}</li>
+    {% endfor %}
+  </ul>
+  <br>
+  <a href="/logout">Logout</a>
+</div>
+{% endblock %}

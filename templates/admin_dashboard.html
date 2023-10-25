@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}Homepage{% endblock %}
+{% block content %}
+<div style="background-image: url('https://www.thespruce.com/thmb/nEQJemYpGs7bPx6fJWGSwpjd14E=/2998x0/filters:no_upscale():max_bytes(150000):strip_icc()/assorted-gym-and-fitness-equipment-in-a-garage-1184898586-b2b7dba2df74471cb1164cc1c4526552.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+<h1 style="color:rgba(222, 218, 218, 0.914) ;" class="heading"><i>Dashboard</i></i></h1>
+<br>
+<h2 style="color: white;"> &nbsp;&nbsp; Welcome back {{username}} :)</h2>
+<style>
+    .section-container {
+        display: flex;
+        justify-content: space-between;
+        height: 400px;
+    }
+
+    .section {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .section-1 {
+        background-image: url('path/to/background1.jpg');
+    }
+
+    .section-2 {
+        background-image: url('path/to/background2.jpg');
+    }
+
+    .section-3 {
+        background-image: url('path/to/background3.jpg');
+    }
+
+    .section h1 {
+        color: white;
+        font-size: 36px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
+<h1><a href="/admin/receipts"  style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"
+                >View Receipts ></a></h1>
+</h1><h1><a href="/admin/revenue"  style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"
+                    >Revenue ></a></h1>
+<div class="section-container" style="margin-top: 50px;">
+    <div class="section section-1">
+        <h1><a href="/admin/view-products"  style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"
+            >View Existing Products ></a></h1>
+            <h1><a href="/admin/add-product"  style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"
+                >Add a New Product ></a></h1>
+    </div>
+   
+
+    <div class="section section-2">
+        <h1><a href="/admin/view-services"   style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;">View Services ></a></h1>
+        <h1><a href="/admin/add-service"  style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"
+            >Add New Service ></a></h1>
+    </div>
+
+    <div class="section section-3">
+        
+        
+        <h1><a href="/admin/view-membership"   style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"> View Existing Membership Plans ></a></h1>
+        <h1><a href="/admin/add-membership"   style="font-size: 100px; display: inline-block; padding: 7px 0; background-color: #f8bc1a; border: 1px solid #f8bc1a; width: 300px; font-size: large; color: rgba(255, 255, 255); border-radius: 10px;"> Add New Membership Plan ></a></h1>
+    </div>
+</div>
+<pre>
+
+
+
+</pre>
+{% endblock %}

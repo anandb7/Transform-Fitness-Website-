@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop Membership{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://www.thespruce.com/thmb/nEQJemYpGs7bPx6fJWGSwpjd14E=/2998x0/filters:no_upscale():max_bytes(150000):strip_icc()/assorted-gym-and-fitness-equipment-in-a-garage-1184898586-b2b7dba2df74471cb1164cc1c4526552.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+  <h1>Shop Membership</h1>
+  <br><br>
+  <form action="/shop-membership" method="POST" style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      {% for membership in memberships %}
+      <div style="width: 45%; margin: 10px; padding: 10px; background-color: #000000d6; color: #c4c4c4;" class="round">
+        <h2>{{ membership.name }}</h2>
+        <p style="color: #fff;">Price: {{ membership.price }}
+        <input type="checkbox" name="selected_memberships" value="{{ membership.id }}"></p>
+        <span class="hover-text">{{ membership.description }}</span>
+      </div><br><br>
+      {% endfor %}
+    </div>
+    <br>
+
+    <input  formaction="/shop-membership/checkout" class="submit-button" type="submit" value="Checkout"><br><br>
+  </form>
+</div>
+
+<style>
+.hover-text {
+  display: none;
+}
+
+.round:hover .hover-text {
+  display: block;
+}
+</style>
+{% endblock %}

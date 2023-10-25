@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Shop Services{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://edge.mwallpapers.com/photos/celebrities/hd-wallpapers/bodybuilder-effort-weights-gym-person-man-body-indoors-wear-muscles-android-iphone-hd-wallpaper-background-downloadhd-wallpapers-desktop-background-android-iphone-1080p-4k-01oub.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;"><br>
+  <h1>Services List</h1>
+  <br><br>
+  <form action="/view-services" method="POST" style="display: flex; flex-direction: column; align-items: center;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      {% for service in services %}
+      <div style="width: 45%; margin: 10px; padding: 10px; background-color: #000000d6; color: #c4c4c4;" class="round">
+        <h2>{{ service.name }}</h2>
+        <p style="color: #fff;">Price: {{ service.price }}
+        
+        <span class="hover-text">{{ service.description }}</span>
+      </div><br><br>
+      {% endfor %}
+    </div>
+    <br>
+
+    <input  formaction="javascript:history.go(-1)" class="submit-button" type="submit" value="Back to Dashboard"><br><br>
+  </form>
+</div>
+
+<style>
+.hover-text {
+  display: none;
+}
+
+.round:hover .hover-text {
+  display: block;
+}
+</style>
+{% endblock %}

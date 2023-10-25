@@ -1,0 +1,292 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<div style="background-image: url('static/images/3.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;">
+<section class=" slider_section position-relative">
+    <div class="container">
+      <div class="custom_nav2">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex  flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About </a>
+                </li>
+                <li class="nav-item">
+                  
+                  <a class="nav-link" href="/dashboard" onmouseenter="showDropdown()">Services</a>
+
+                  <div id="dropdown" onmouseleave="hideDropdown()" style="display: none;">
+                    <select onchange="navigateOption(event)">
+                      <option value="" selected disabled>Select an option</option>
+                      <option value="/shop-membership">Membership</option>
+                      <option value="/shop-services">Services</option>
+                      <option value="/shop-products">Products</option>
+                    </select>
+                  </div>
+                  
+                  <script>
+                  function showDropdown() {
+                    var dropdown = document.getElementById("dropdown");
+                    dropdown.style.display = "block";
+                  }
+                  
+                  function hideDropdown() {
+                    var dropdown = document.getElementById("dropdown");
+                    dropdown.style.display = "none";
+                  }
+                  
+                  function navigateOption(event) {
+                    var selectedOption = event.target.value;
+                    if (selectedOption) {
+                      window.location.href = selectedOption;
+                    }
+                  }
+                  </script>
+                        
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="slider_container" style="margin-left: 400px; margin-top: 1px;">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <pre>
+
+
+    
+
+        
+        </pre>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                  <div class="detail-box">
+                    <h2>
+                      Get Your Body
+                    </h2>
+                    <h1>
+                      Fitness Here
+                    </h1>
+                    <p>
+                        Get fit, stay healthy, and achieve your fitness goals with our professional trainers and state-of-the-art facilities.
+                    </p>
+                    <div class="btn-box">
+                      <a href="/login" class="btn-1">
+                        Login
+                      </a>
+                      <a href="/register" class="btn-2">
+                        Sign up
+                      </a>
+                      <a href="/dashboard" class="btn-2">
+                        Guest
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                  <div class="detail-box">
+                    <h2>
+                      Get Your Body
+                    </h2>
+                    <h1>
+                      Fitness Here
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Read More
+                      </a>
+                      <a href="" class="btn-2">
+                        Get A Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                  <div class="detail-box">
+                    <h2>
+                      Get Your Body
+                    </h2>
+                    <h1>
+                      Fitness Here
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Ut enim ad minim veniam
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Read More
+                      </a>
+                      <a href="" class="btn-2">
+                        Get A Quote
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end slider section -->
+
+
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+</pre>
+
+{% endblock %}
+
+<style>
+.homepage-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('https://example.com/path_to_your_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    width: 100%;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.menu {
+    margin-top: 10px;
+}
+
+.menu a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #bbb;
+}
+
+.menu a:focus {
+    outline: none;
+    background-color: #999;
+}
+
+.content-container {
+    margin-top: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 36px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons a {
+    margin: 10px;
+}
+
+.buttons button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #45a049;
+}
+</style>

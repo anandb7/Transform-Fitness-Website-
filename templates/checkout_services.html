@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://laymansfitness.com/wp-content/uploads/2023/04/Minimalist-Workouts-scaled.jpg');background-repeat: no-repeat;
+background-size: contain; background-size: cover; ">
+ <br><br> <h1 style="color: rgb(85, 83, 83);margin-right: 600px;font-size: 100px;display: flex; flex-direction: column; align-items: center;">Checkout</h1>
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <h1 style="color: white;margin-right: 140px;">Selected Services: </h1>
+  <p style="color: white;" >
+    <ul>
+      {% if selected_services %}
+        <table style="font-size: 15px;">
+          <strong>
+            <tbody>
+              {% set selected_items = [] %}
+              {% for service in selected_services %}
+                {% set item = service.name ~ ' - ₹' ~ service.price %}
+                <tr>
+                  <td>{{ item }}</td>
+                </tr>
+                {% set _ = selected_items.append(item) %}
+              {% endfor %}
+            </tbody>
+          </strong>
+        </table>
+      {% else %}
+        <h2>No services selected</h2>
+      {% endif %}
+    </ul>
+  </p>
+
+  <h2>Total Amount: <h2>Total Amount: {{ session.get('total_amount_services') }}₹</h2></h2>
+</div>
+  <form action="/shop-services/checkout/razor" method="POST" style="display: flex; flex-direction: column; align-items: center;"><br><br>
+    <!-- Add any additional form fields for customer information, payment, etc. -->
+    <input type="hidden" name="total_amount" value="{{ total_amount }}"><br><br>
+    <input formaction="/shop-services/checkout/razor" class="submit-button" type="submit" value="Continue to Payment">
+  </form>
+  <br><br><br><br><br><br>
+{% endblock %}

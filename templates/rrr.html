@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+<div style="background-image: url('https://www.firstcitizens.com/content/dam/firstcitizens/images/resources/business/cash-management/types-of-payment-methods@2x.jpg.transform/image-scaled-2x-to-1x/image.jpeg');background-repeat: no-repeat;
+background-size: contain; background-size: cover;" ><br><br><br><br>
+    <form class="round"  action="charge"   method="POST" class="submit-button" style="display: flex; flex-direction: column; align-items: center; max-width: 400px; margin-left: 520px;    background-color: black;">
+        <h1 style="color: aliceblue;">Payment</h1>
+    <p style="color: aliceblue;">Click the button below to proceed with payment:</p>
+    <br>
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_WyK93y9mvps7SN"
+            data-amount="{{ total_amount }}"
+            data-name="Daft Punk"
+            data-description="Purchase Description"
+            data-image="vk.jpg"
+            data-netbanking="true"
+            data-description="Tron Legacy"
+            data-prefill.name="Harshil Mathur"
+            data-prefill.email="harshil@razorpay.com"
+            data-prefill.contact="9999999999"
+            data-notes.shopping_order_id="21"
+            data-buttontext="Pay using razorpay">
+        </script>
+         <pre>
+
+         </pre>
+        <input type="hidden" name="shopping_order_id" value="21">
+    </form>
+    <br><br><br><br><br><br>
+    {% endblock %}
